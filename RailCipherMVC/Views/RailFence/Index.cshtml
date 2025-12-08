@@ -1,0 +1,41 @@
+﻿@model RailCipherMVC.Models.RailFenceModel
+
+<h2>Rail Fence Cipher (Частокіл)</h2>
+
+<form method="post">
+    <label>Введіть текст:</label><br />
+    <textarea name="InputText" rows="3" style="width: 100%;">@Model.InputText</textarea>
+
+    <br /><br />
+    <label>Кількість рейок:</label>
+    <input name="Rails" type="number" min="2" value="@Model.Rails" />
+
+    <br /><br />
+    <button type="submit">Зашифрувати</button>
+</form>
+
+<hr />
+
+@if (Model.EncryptedText != null)
+{
+    <h3>Частокіл:</h3>
+    <table border="1" cellpadding="5">
+        @for (int r = 0; r < Model.Rails; r++)
+        {
+            <tr>
+                @for (int c = 0; c < Model.FenceArray.GetLength(1); c++)
+                {
+                    <td style="text-align:center; width:20px;">
+                        @(Model.FenceArray[r, c] == '\0' ? " " : Model.FenceArray[r, c])
+                    </td>
+                }
+            </tr>
+        }
+    </table>
+
+    <h3>Шифр:</h3>
+    <pre>@Model.EncryptedText</pre>
+
+    <h3>Розшифрований текст:</h3>
+    <pre>@Model.DecryptedText</pre>
+}

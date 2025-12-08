@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36414.22 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RailCipherMVC", "RailCipherMVC\RailCipherMVC.csproj", "{80B15279-97D1-4632-A080-F8AC22837EC2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{80B15279-97D1-4632-A080-F8AC22837EC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80B15279-97D1-4632-A080-F8AC22837EC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80B15279-97D1-4632-A080-F8AC22837EC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80B15279-97D1-4632-A080-F8AC22837EC2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {73B42CA2-D508-4D20-81B7-D4B58C39AAB6}
+	EndGlobalSection
+EndGlobal
