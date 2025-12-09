@@ -1,3 +1,5 @@
+using RailCipherMVC.Services;
+
 namespace RailCipherMVC
 {
     public class Program
@@ -8,6 +10,9 @@ namespace RailCipherMVC
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+
+            builder.Services.AddSingleton<IDeletionService, DeletionService>();
+
 
             builder.Services.AddDistributedMemoryCache();
             builder.Services.AddSession(options =>

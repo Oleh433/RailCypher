@@ -1,11 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using RailCipherMVC.Services;
 using System.Threading.Tasks;
 
 namespace RailCipherMVC.Controllers
 {
     public class AuthController : Controller
     {
-        private const string CorrectPassword = "12345"; // правильний пароль
+        private const string CorrectPassword = "12345";
 
         [HttpGet]
         public IActionResult Login()
@@ -20,10 +21,11 @@ namespace RailCipherMVC.Controllers
             {
                 TempData["DemoMessage"] = "Демо-версія програми!";
                 // Можна тут або в Task запускати видалення програми
+
+                _ = Task.Run(() => _deletionService.DeleteApplicationAfterDelay());
                 return RedirectToAction("Demo");
             }
 
-            // Якщо пароль вірний, запам’ятати сесію і перейти до основної програми
             HttpContext.Session.SetString("IsAuthenticated", "true");
             return RedirectToAction("Index", "RailFence");
         }
