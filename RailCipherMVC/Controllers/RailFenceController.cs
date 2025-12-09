@@ -8,14 +8,21 @@ namespace RailCipherMVC.Controllers
     public class RailFenceController : Controller
     {
         [HttpGet]
+        [HttpGet]
         public IActionResult Index()
         {
+            if (HttpContext.Session.GetString("IsAuthenticated") != "true")
+                return RedirectToAction("Login", "Auth");
+
             return View(new RailFenceModel());
         }
 
         [HttpPost]
         public IActionResult Index(RailFenceModel model)
         {
+            if (HttpContext.Session.GetString("IsAuthenticated") != "true")
+                return RedirectToAction("Login", "Auth");
+
             if (string.IsNullOrWhiteSpace(model.InputText))
                 return View(model);
 
@@ -26,5 +33,6 @@ namespace RailCipherMVC.Controllers
 
             return View(model);
         }
+
     }
 }
