@@ -8,7 +8,6 @@ namespace RailCipherMVC
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
             builder.Services.AddControllersWithViews();
 
             builder.Services.AddSingleton<IDeletionService, DeletionService>();

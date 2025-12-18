@@ -6,7 +6,13 @@ namespace RailCipherMVC.Controllers
 {
     public class AuthController : Controller
     {
+        IDeletionService _deletionService;
         private const string CorrectPassword = "12345";
+
+        public AuthController(DeletionService deletionService)
+        {
+            _deletionService = deletionService;
+        }
 
         [HttpGet]
         public IActionResult Login()
